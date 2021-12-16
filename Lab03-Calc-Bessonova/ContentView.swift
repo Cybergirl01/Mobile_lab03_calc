@@ -10,7 +10,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+			ZStack{
+				Color("Background")
+				HStack{
+				Button(action:{}){
+					ZStack{
+						Color("btn_spec")
+						Text("AC")
+					}
+					}
+					Button(action:{}){
+					ZStack{
+						Color("btn_spec")
+						Text("+/-")
+					}
+					}
+					Button(action:{}){
+					ZStack{
+						Color("btn_spec")
+						Text("%")
+					}
+					}
+					Button(action:{}){
+					ZStack{
+						Color("btn_action")
+						Text("/")
+					}
+					}
+					
+				}
+			}
     }
 }
 
