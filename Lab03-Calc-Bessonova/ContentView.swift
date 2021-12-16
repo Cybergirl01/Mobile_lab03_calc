@@ -12,33 +12,118 @@ struct ContentView: View {
     var body: some View {
 			ZStack{
 				Color("Background")
+				VStack{
 				HStack{
 				Button(action:{}){
 					ZStack{
 						Color("btn_spec")
-						Text("AC")
-					}
-					}
-					Button(action:{}){
-					ZStack{
-						Color("btn_spec")
-						Text("+/-")
-					}
+						Text("AC").foregroundColor(Color("col_textbtn"))					}
 					}
 					Button(action:{}){
 					ZStack{
 						Color("btn_spec")
-						Text("%")
+						Text("+/-").foregroundColor(Color("col_textbtn"))					}
 					}
+					Button(action:{}){
+					ZStack{
+						Color("btn_spec")
+						Text("%").foregroundColor(Color("col_textbtn"))					}
 					}
 					Button(action:{}){
 					ZStack{
 						Color("btn_action")
-						Text("/")
+						Text("/").foregroundColor(Color("col_textbtn"))					}
 					}
-					}
-					
 				}
+						HStack{
+						Button(action:{}){
+							ZStack{
+								Color("btn_digit")
+								Text("7").foregroundColor(Color("col_textbtn"))							}
+							}
+							Button(action:{}){
+							ZStack{
+								Color("btn_digit")
+								Text("8").foregroundColor(Color("col_textbtn"))							}
+							}
+							Button(action:{}){
+							ZStack{
+								Color("btn_digit")
+								Text("9").foregroundColor(Color("col_textbtn"))							}
+							}
+							Button(action:{}){
+							ZStack{
+								Color("btn_action")
+								Text("*").foregroundColor(Color("col_textbtn"))							}
+					}
+				}
+					HStack{
+							Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("4").foregroundColor(Color("col_textbtn"))								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("5").foregroundColor(Color("col_textbtn"))								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("6")
+										.foregroundColor(Color("col_textbtn"))
+								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_action")
+									Text("-").foregroundColor(Color("col_textbtn"))								}
+						}
+					}
+					HStack{
+							Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("1").foregroundColor(Color("col_textbtn"))								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("2").foregroundColor(Color("col_textbtn"))								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("3")
+										.foregroundColor(Color("col_textbtn"))
+								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_action")
+									Text("+").foregroundColor(Color("col_textbtn"))								}
+						}
+					}
+					HStack{
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text("0").foregroundColor(Color("col_textbtn"))								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_digit")
+									Text(".")
+										.foregroundColor(Color("col_textbtn"))
+								}
+								}
+								Button(action:{}){
+								ZStack{
+									Color("btn_action")
+									Text("=").foregroundColor(Color("col_textbtn"))								}
+						}
+					}						}
 			}
     }
 }
