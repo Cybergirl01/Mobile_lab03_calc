@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+	@State var a: String = "0"
+	@State var b:String = "0"
+	@State var fn:String = ""
+	
     var body: some View {
 			ZStack{
 				Color("Background")
@@ -18,7 +22,13 @@ struct ContentView: View {
 						.frame(width: UIScreen.main.bounds.width, alignment: .trailing)
 						.foregroundColor(.white)
 					HStack(spacing:1){
-				Button(action:{}){
+						Button(action:{
+							self.a = "0"
+							self.b = "0"
+							self.fn = ""
+						})
+						{
+							
 					ZStack{
 						Color("btn_spec")
 						Text("AC").foregroundColor(Color("col_textbtn"))					}
