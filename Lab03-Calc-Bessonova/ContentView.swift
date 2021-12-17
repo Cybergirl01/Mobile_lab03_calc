@@ -12,8 +12,12 @@ struct ContentView: View {
     var body: some View {
 			ZStack{
 				Color("Background")
-				VStack{
-				HStack{
+				VStack(spacing:1){
+					Spacer()
+					Text("0").font(.system(size:80))
+						.frame(width: UIScreen.main.bounds.width, alignment: .trailing)
+						.foregroundColor(.white)
+					HStack(spacing:1){
 				Button(action:{}){
 					ZStack{
 						Color("btn_spec")
@@ -22,7 +26,7 @@ struct ContentView: View {
 					Button(action:{}){
 					ZStack{
 						Color("btn_spec")
-						Text("+/-").foregroundColor(Color("col_textbtn"))					}
+						Image(systemName: "plusminus").foregroundColor(Color("col_textbtn"))					}
 					}
 					Button(action:{}){
 					ZStack{
@@ -32,10 +36,12 @@ struct ContentView: View {
 					Button(action:{}){
 					ZStack{
 						Color("btn_action")
-						Text("/").foregroundColor(Color("col_textbtn"))					}
+						Image(systemName: "divide").foregroundColor(Color("col_textbtn"))
+						
+						}
 					}
-				}
-						HStack{
+					}.frame(height: UIScreen.main.bounds.width / 4)
+					HStack(spacing: 1){
 						Button(action:{}){
 							ZStack{
 								Color("btn_digit")
@@ -54,10 +60,10 @@ struct ContentView: View {
 							Button(action:{}){
 							ZStack{
 								Color("btn_action")
-								Text("*").foregroundColor(Color("col_textbtn"))							}
+								Image(systemName: "multiply").foregroundColor(Color("col_textbtn"))							}
 					}
-				}
-					HStack{
+				}.frame(height: UIScreen.main.bounds.width / 4)
+					HStack(spacing:1){
 							Button(action:{}){
 								ZStack{
 									Color("btn_digit")
@@ -80,8 +86,9 @@ struct ContentView: View {
 									Color("btn_action")
 									Text("-").foregroundColor(Color("col_textbtn"))								}
 						}
-					}
-					HStack{
+					}.frame(height: UIScreen.main.bounds.width / 4)
+				
+				HStack(spacing:1){
 							Button(action:{}){
 								ZStack{
 									Color("btn_digit")
@@ -104,13 +111,13 @@ struct ContentView: View {
 									Color("btn_action")
 									Text("+").foregroundColor(Color("col_textbtn"))								}
 						}
-					}
-					HStack{
+					}.frame(height: UIScreen.main.bounds.width / 4)
+					HStack(spacing:1){
 								Button(action:{}){
 								ZStack{
 									Color("btn_digit")
 									Text("0").foregroundColor(Color("col_textbtn"))								}
-								}
+								}.frame(width: UIScreen.main.bounds.width / 2 - 0.5)
 								Button(action:{}){
 								ZStack{
 									Color("btn_digit")
@@ -123,7 +130,8 @@ struct ContentView: View {
 									Color("btn_action")
 									Text("=").foregroundColor(Color("col_textbtn"))								}
 						}
-					}						}
+					}.frame(height: UIScreen.main.bounds.width / 4)
+				}.font(.system(size: 25))
 			}
     }
 }
