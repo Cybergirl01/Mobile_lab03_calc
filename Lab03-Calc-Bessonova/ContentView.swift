@@ -37,7 +37,9 @@ struct ContentView: View {
 						Color("btn_spec")
 						Image(systemName: "plusminus").foregroundColor(Color("col_textbtn"))					}
 					}
-						Button(action:{self.fn = "%"}){
+						Button(action:{
+							var x:Float = Float(self.a)!
+							self.a = String(x / 100)}){
 					ZStack{
 						Color("btn_spec")
 						Text("%").foregroundColor(Color("col_textbtn"))					}
@@ -145,17 +147,37 @@ struct ContentView: View {
 					}.frame(height: UIScreen.main.bounds.width / 4)
 				
 				HStack(spacing:1){
-							Button(action:{}){
+							Button(action:{
+								
+								if (self.fn.count == 0){
+									self.a += "1"
+									}
+								else{
+									self.b += "1"
+									}									}){
 								ZStack{
 									Color("btn_digit")
 									Text("1").foregroundColor(Color("col_textbtn"))								}
 								}
-								Button(action:{}){
+								Button(action:{
+									if (self.fn.count == 0){
+										self.a += "2"
+										}
+									else{
+										self.b += "2"
+										}															}){
 								ZStack{
 									Color("btn_digit")
 									Text("2").foregroundColor(Color("col_textbtn"))								}
 								}
-								Button(action:{}){
+								Button(action:{
+									
+									if (self.fn.count == 0){
+										self.a += "3"
+										}
+									else{
+										self.b += "3"
+										}															}){
 								ZStack{
 									Color("btn_digit")
 									Text("3")
@@ -169,19 +191,59 @@ struct ContentView: View {
 						}
 					}.frame(height: UIScreen.main.bounds.width / 4)
 					HStack(spacing:1){
-								Button(action:{}){
+								Button(action:{
+									if (self.fn.count == 0){
+										self.a += "0"
+										}
+									else{
+										self.b += "0"
+										}
+								}){
 								ZStack{
 									Color("btn_digit")
 									Text("0").foregroundColor(Color("col_textbtn"))								}
 								}.frame(width: UIScreen.main.bounds.width / 2 - 0.5)
-								Button(action:{}){
+								Button(action:{
+									
+								if (self.fn.count == 0){
+									self.a += "."
+									}
+								else{
+									self.b += "."
+									
+									}
+									
+								}){
 								ZStack{
 									Color("btn_digit")
 									Text(".")
 										.foregroundColor(Color("col_textbtn"))
 								}
 								}
-								Button(action:{}){
+						Button(action:{ var x1:Float = Float(self.a)!
+							var x2:Float = Float(self.b)!
+							if self.fn == "+"{
+								self.a = String(x1 + x2)
+							}
+							else if self.fn == "-"{
+								self.a = String(x1 - x2)
+							}
+							else if self.fn == "*"{
+								self.a = String(x1 * x2)
+							}
+							else if self.fn == "/"
+							{
+								if x2 == 0{
+									self.a = "Can't devide by zero."
+								}
+								else{
+									self.a = String(x1 / x2)
+								}
+							}
+							
+							self.b = "0"
+							self.fn = ""
+						}){
 								ZStack{
 									Color("btn_action")
 									Text("=").foregroundColor(Color("col_textbtn"))								}
